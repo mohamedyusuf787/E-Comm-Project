@@ -252,13 +252,13 @@ app.post("/api/order", async (req, res) => {
 
 
 app.get("/", (req, res) => {
-    app.response("hi there it work")
-})
+  res.send("Backend is running");
+});
 
 
-app.listen(process.env.PORT ||3000, () => {
-    console.log("server running")
-})
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server running");
+});
 
 app.get("/test", (req, res) => {
   res.json({ status: "OK" });
