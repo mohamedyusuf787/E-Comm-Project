@@ -119,10 +119,10 @@ const Product = () => {
                 </div>
                 </div>
 
-                <div className="categories-cards w-full flex-wrap flex gap-2 justify-center">
+                <div className="categories-cards w-full flex-wrap flex gap-3 justify-center">
                     {
                         filteredProducts.map((product, index) => (
-                            <div key={index} className="categories-card flex flex-col gap-2 items-center justify-center">
+                            <div key={index} className="categories-card flex flex-col gap-2 items-center justify-center mb-2  ">
                                 <div className="flex justify-center card-img w-50 h-50 overflow-hidden rounded-xl md:w-70 md:h-70">
                                     <img className="hover:scale-105  transition duration-200 ease-in-out" src={`http://localhost:3000${product.images[0]}`} alt={product.name} />    {/*you do not put "/" after 3000.*/}
                                 </div >
@@ -134,7 +134,7 @@ const Product = () => {
                                 </div>
                                 <div className="card-btn flex flex-col gap-2 w-full">
                                     <button onClick={() => handleCart(product._id)} className="btn">Add to Cart</button>
-                                    <button onClick={() => handleViewproduct(product._id)} className="btn">View Details</button>
+                                    <button onClick={() => handleViewproduct(product._id)} className="btn-sec">View Details</button>
                                 </div>
                             </div >
                         )

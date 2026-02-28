@@ -44,7 +44,7 @@ const home = () => {
       <div className="hero-section relative h-full">
         <img className='w-full md:hidden' src={heroimage} alt="heroimage" />
         <img className='hidden md:flex' src={dHeroimage} alt="desktopimage" />
-        <div className="hero-content absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] text-white text-center md:text-left md:left-70 md:-translate-y-1/3 md:w-[40%] lg:border lg:border-red-700 lg:left-100 lg:w-[30%]">
+        <div className="hero-content absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] text-white text-center md:text-left md:left-70 md:-translate-y-1/3 md:w-[40%] lg:left-100 lg:w-[30%]">
           <h1 className='font-bold text-3xl  lg:text-5xl'> Shop Smarter. Live Better.</h1>
           <p className='text-gray-300 lg:text-xl'> Discover premium products at unbeatable prices — delivered fast to your doorstep.</p>
           <button onClick={handleShopnow} className='bg-white font-bold text-prime px-20 py-2 rounded-lg hover:cursor-pointer'>Shop Now</button>

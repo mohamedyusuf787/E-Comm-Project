@@ -12,11 +12,11 @@ const Navbar = () => {
   // const [log, setLog] = useState(false);
   const navigate = useNavigate();
   // const dispatch = useDispatch();
-  const User = useSelector((state) => state.userID.uid)
+  const User = useSelector((state) => state.userID)  //userID.uid access in the bottom.
 
- function logout() {
-  signOut(auth)
-}
+  function logout() {
+    signOut(auth)
+  }
 
   function login() {
     navigate("/login")
@@ -36,10 +36,10 @@ const Navbar = () => {
         <div className="logo ">
           <img src={logo} alt="logo" />
         </div>
-        <ul className='hidden md:flex gap-3 text-white '>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/product">Products</Link></li>
-          <li><Link to="/cart">Cart</Link></li>
+        <ul className='hidden md:flex gap-4 text-white '>
+          <li className='font-bold  transition-all duration-300 ease-in-out hover:scale-125'><Link to="/">Home</Link></li>
+          <li className='font-bold  transition-all duration-300 ease-in-out hover:scale-125'><Link to="/product">Products</Link></li>
+          <li className='font-bold  transition-all duration-300 ease-in-out hover:scale-125'><Link to="/cart">Cart</Link></li>
         </ul>
         <div onClick={handleMenu} className="icons flex text-white text-2xl hover:cursor-pointer md:hidden">
           <LuMenu />
@@ -58,9 +58,9 @@ const Navbar = () => {
 
       <div className="mobile-menu flex-col text-right h-60 bg-white w-full px-4 py-3  rounded-b-2xl drop-shadow-md md:hidden">
         <ul>
-          <li className='border-b py-2'><Link to="/">Home</Link></li>
-          <li className='border-b py-2'><Link to="/product">Products</Link></li>
-          <li className='border-b py-2'><Link to="/cart">Cart</Link></li>
+          <li className='border-b py-2 transition-all duration-300 ease-in-out hover:scale-105'><Link to="/">Home</Link></li>
+          <li className='border-b py-2 transition-all duration-300 ease-in-out hover:scale-105'><Link to="/product">Products</Link></li>
+          <li className='border-b py-2 transition-all duration-300 ease-in-out hover:scale-105'><Link to="/cart">Cart</Link></li>
           <button onClick={logout} className='hidden md:flex bg-white w-fit px-6 py-2 rounded-lg hover:cursor-pointer'>Logout dude</button>
 
         </ul>
