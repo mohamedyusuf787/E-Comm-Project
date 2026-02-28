@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react'
 import { useDispatch } from "react-redux"
+import { useSelector } from 'react-redux';
 import { userId } from './slice/userIdSlice';
 import auth from "./config/firebase"
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -12,13 +13,12 @@ const login = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+    const uid = useSelector((state) => state.userID.uid)
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        // navigate("/")
-      }
-    })
-  }, [navigate]);
+    if (uid) {
+      navigate("/");
+    }
+  }, [uid]);
 
 
   const handleLogin = (e) => {

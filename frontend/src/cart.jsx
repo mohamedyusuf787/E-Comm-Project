@@ -47,7 +47,7 @@ const Cart = () => {
     )
 
     return (
-        <section className="cart-section">
+        <section className="cart-section mb-10">
             <h1 className="w-full text-center text-2xl font-bold bg-white py-3">Your cart page</h1>
             <div className="cart-cards flex flex-col gap-2 bg-white rounded-2xl p-2 mt-10 mx-10 h-fit">
 
@@ -59,7 +59,7 @@ const Cart = () => {
                             </h1>
                             <button
                                 onClick={() => navigate("/")}
-                                className="btn w-16"              >
+                                className="bg-prime text-white py-2 px-4 rounded-lg w-fit hover:cursor-pointer hover:bg-ternay hover:text-prime"              >
                                 Continue Shopping
                             </button>
                         </div>) : (

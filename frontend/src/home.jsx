@@ -41,7 +41,7 @@ const home = () => {
 
   return (
     <>
-      <div className="hero-section relative border border-red-600 h-full">
+      <div className="hero-section relative h-full">
         <img className='w-full md:hidden' src={heroimage} alt="heroimage" />
         <img className='hidden md:flex' src={dHeroimage} alt="desktopimage" />
         <div className="hero-content absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] text-white text-center md:text-left md:left-70 md:-translate-y-1/3 md:w-[40%] lg:border lg:border-red-700 lg:left-100 lg:w-[30%]">
@@ -54,13 +54,13 @@ const home = () => {
       {/* featured categories */}
         <h1 className='text-black font-bold text-2xl text-center mt-10 md:text-4xl'>Featured Categories</h1>
 
-      <section className='featured categries mt-8 flex flex-col justify-center gap-4 md:text-center md:flex-row border border-red-700'>
+      <section className='featured categries mt-8 flex flex-col justify-center gap-4 md:text-center md:flex-row'>
         {
           products.filter((product) => product.isFeatured === true)
             .map((product) => (
               <div onClick={() => featuredProduct(product._id)} className="categories-card flex flex-col gap-2 items-center justify-center hover:cursor-pointer">
-                <img src={`http://localhost:3000${product.images[0]}`} alt={product.name} />
-                <h1 key={product._id} className='arial font-medium'>{product.name}</h1>
+                <img className='hover:scale-105  transition duration-200 ease-in-out' src={`http://localhost:3000${product.images[0]}`} alt={product.name} />
+                <h1 key={product._id} className='text-xl font-bold'>{product.name}</h1>
               </div>
             ))
         }
@@ -74,10 +74,10 @@ const home = () => {
             <h1 className='text-white font-bold text-2xl md:text-4xl'>Limited Time Offer</h1>
             <p className='text-gray-300 md:text-xl'> Up to 40% OFF on Electronics Shop before the deal ends!</p>
           </div>
-          <button onClick={handleShopnow} className='bg-prime text-white rounded-md px-8 py-4 w-[60%] md:mt-4'>Grab the deal</button>
+          <button onClick={handleShopnow} className='bg-prime text-white rounded-md px-8 py-4 w-[60%] md:mt-4 hover:cursor-pointer hover:bg-ternay hover:text-prime'>Grab the deal</button>
         </div>
         <div className="limited-right">
-          <img className='hidden md:flex w-90 bottom-6 border border-red-800 mb-9' src={model} alt="model" />
+          <img className='hidden md:flex w-90 bottom-6 mb-9' src={model} alt="model" />
         </div>
       </section>
 

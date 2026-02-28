@@ -1,5 +1,9 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { userId } from './slice/userIdSlice';
+import auth from "./config/firebase"
 import Login from "./login"
 import Signup from './signup'
 import Home from "./home"
@@ -9,6 +13,27 @@ import Productdetail from "./productdetail"
 import Cart from "./cart"
 import Checkout from "./Checkout"
 const App = () => {
+  const dispatch=useDispatch()
+
+  useEffect(() => {
+  const unsubscribe = auth.onAuthStateChanged((user) => {
+    if (user) {
+      dispatch(userId({
+        uid: user.uid,
+        email: user.email
+      }))
+    } else {
+      dispatch(userId({
+        uid: "",
+        email: ""
+      }))
+    }
+  });
+
+  return () => unsubscribe();
+}, []);
+
+
   return (
     <>
         <Routes>
