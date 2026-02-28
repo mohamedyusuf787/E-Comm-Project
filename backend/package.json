@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "backend for e comm website",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon index.js"
-  },
+  
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "dev": "nodemon index.js",
+  "start": "node index.js"
+},
+
   "author": "md yusuf",
   "license": "ISC",
   "dependencies": {
