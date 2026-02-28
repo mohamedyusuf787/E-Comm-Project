@@ -256,6 +256,10 @@ app.get("/", (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log("server started bro")
+app.listen(process.env.PORT ||3000, () => {
+    console.log("server running")
 })
+
+app.get("/test", (req, res) => {
+  res.json({ status: "OK" });
+});
