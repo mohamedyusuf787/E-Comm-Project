@@ -7,7 +7,7 @@ const contactus = () => {
           <h1 className='text-3xl'>Ready to Get Out New Stuff?</h1>
           <div className="input-box bg-white rounded-4xl flex justify-between px-2 py-1">
             <input className='text-gray-600 focus:border-none focus:outline-none' type="text" placeholder='enter email' />
-            <button className='bg-prime text-white rounded-4xl px-3 py-1'>Send now</button>
+            <button className='bg-prime text-white rounded-4xl px-3 py-1 hover:cursor-pointer'>Send now</button>
           </div>
           <div className="contactus-right">
              <h6 className='text-2xl'>Stuffs for home and heed</h6>

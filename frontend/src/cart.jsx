@@ -12,7 +12,7 @@ const Cart = () => {
         if (!uid) return
 
         try {
-            const res = await axios.get(`http://localhost:3000/api/usercart/${uid}`)
+            const res = await axios.get(`https://e-comm-project-jt4w.onrender.com/api/usercart/${uid}`)
             setCart(res.data?.products || [])
         } catch (err) {
             console.log(err)
@@ -26,7 +26,7 @@ const Cart = () => {
 
     async function updateQty(id, action) {
         try {
-            await axios.put("http://localhost:3000/api/usercart", {
+            await axios.put("https://e-comm-project-jt4w.onrender.com/api/usercart", {
                 userId: uid,
                 productId: id,
                 action

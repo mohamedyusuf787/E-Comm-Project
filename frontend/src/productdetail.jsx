@@ -10,7 +10,7 @@ function ProductDetail() {
     const uid = useSelector((state) => state.userID.uid)
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get(`http://localhost:3000/api/products/${id}`)
+        axios.get(`https://e-comm-project-jt4w.onrender.com/api/products/${id}`)
             .then((res) => {
                 setProduct(res.data);
             })
@@ -26,7 +26,7 @@ function ProductDetail() {
             return
         }
         try {
-            const res = await axios.post("http://localhost:3000/api/usercart",
+            const res = await axios.post("https://e-comm-project-jt4w.onrender.com/api/usercart",
                 {
                     userId: uid,
                     productId: id,
@@ -66,7 +66,7 @@ function ProductDetail() {
 
                 <div className="card bg-white flex flex-col gap-2 w-full rounded-2xl m-2 p-2">
                     <div className="card-top flex gap-2">
-                        <img src={`http://localhost:3000${product.images[0]}`}
+                        <img src={`https://e-comm-project-jt4w.onrender.com${product.images[0]}`}
                             alt={product.name}
                             width="180" />
                         <div className="card-content">

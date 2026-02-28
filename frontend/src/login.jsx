@@ -37,7 +37,7 @@ const login = () => {
           email: email
         }))
 
-        axios.post("http://localhost:3000/api/user", { userId: uid, userEmail: email })
+        axios.post("https://e-comm-project-jt4w.onrender.com/api/user", { userId: uid, userEmail: email })
           .then((res) => {
             console.log("success", res)
           })

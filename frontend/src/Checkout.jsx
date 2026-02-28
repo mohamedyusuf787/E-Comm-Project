@@ -37,7 +37,7 @@ const Checkout = () => {
         if (!uid) return
 
         try {
-            const res = await axios.get(`http://localhost:3000/api/usercart/${uid}`)
+            const res = await axios.get(`https://e-comm-project-jt4w.onrender.com/api/usercart/${uid}`)
             setCart(res.data?.products || [])
             setLoading(false)
         } catch (err) {
@@ -72,7 +72,7 @@ const Checkout = () => {
         }
 
         try {
-            await axios.post("http://localhost:3000/api/order", {
+            await axios.post("https://e-comm-project-jt4w.onrender.com/api/order", {
                 userId: uid,
                 customerInfo: formData,
                 products: cart,

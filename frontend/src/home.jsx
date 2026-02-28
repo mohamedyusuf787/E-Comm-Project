@@ -17,7 +17,7 @@ const home = () => {
   const [products, setProducts] = useState([{}])
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/products")
+    axios.get("https://e-comm-project-jt4w.onrender.com/api/products")
       .then((res) => {
         setProducts(res.data)
         // console.log("products", res.data)
@@ -59,7 +59,7 @@ const home = () => {
           products.filter((product) => product.isFeatured === true)
             .map((product) => (
               <div onClick={() => featuredProduct(product._id)} className="categories-card flex flex-col gap-2 items-center justify-center hover:cursor-pointer">
-                <img className='hover:scale-105  transition duration-200 ease-in-out' src={`http://localhost:3000${product.images[0]}`} alt={product.name} />
+                <img className='hover:scale-105  transition duration-200 ease-in-out' src={`https://e-comm-project-jt4w.onrender.com${product.images[0]}`} alt={product.name} />
                 <h1 key={product._id} className='text-xl font-bold'>{product.name}</h1>
               </div>
             ))

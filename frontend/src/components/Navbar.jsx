@@ -1,20 +1,18 @@
 import React from 'react'
-import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 import { Link } from "react-router-dom"
 import auth from "../config/firebase"
 import { signOut } from 'firebase/auth'
 import { LuMenu, LuShoppingCart, LuUser, LuX, LuSearch, LuFilter } from "react-icons/lu";
 import logo from "../assets/logo-light.png"
-import { useSelector, useDispatch } from 'react-redux'
-import { userId } from '../slice/userIdSlice';
+import { useSelector } from 'react-redux'
 import '../index.css'
 
 const Navbar = () => {
   // const [log, setLog] = useState(false);
   const navigate = useNavigate();
   // const dispatch = useDispatch();
-  const User = useSelector((state) => state.userID)
+  const User = useSelector((state) => state.userID.uid)
 
  function logout() {
   signOut(auth)

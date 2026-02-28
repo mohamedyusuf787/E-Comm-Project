@@ -19,7 +19,7 @@ const Product = () => {
         )
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/products")
+        axios.get("https://e-comm-project-jt4w.onrender.com/api/products")
             .then((res) => {
                 setProducts(res.data)
             })
@@ -34,7 +34,7 @@ const Product = () => {
             return
         }
         try {
-            const res = await axios.post("http://localhost:3000/api/usercart",
+            const res = await axios.post("https://e-comm-project-jt4w.onrender.com/api/usercart",
                 {
                     userId: uid,
                     productId: id,
