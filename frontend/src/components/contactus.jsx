@@ -5,9 +5,9 @@ const contactus = () => {
     <section className='contactus bg-prime mx-4 flex flex-col gap-3 items-center justify-center text-white text-center py-4 px-2 rounded-2xl mt-20'>
        
           <h1 className='text-3xl'>Ready to Get Out New Stuff?</h1>
-          <div className="input-box bg-white rounded-4xl flex justify-between px-2 py-1">
-            <input className='text-gray-600 focus:border-none focus:outline-none' type="text" placeholder='enter email' />
-            <button className='bg-prime text-white rounded-4xl px-3 py-1 hover:cursor-pointer'>Send now</button>
+          <div className="input-box bg-white rounded-4xl flex justify-between px-1 py-1 min-w-1">
+            <input className='text-gray-600 focus:border-none w-30 md:w-full focus:outline-none' type="text" placeholder='enter email' />
+            <button className='bg-prime text-white text-nowrap rounded-4xl px-3 py-1 hover:cursor-pointer'>Send now</button>
           </div>
           <div className="contactus-right">
              <h6 className='text-2xl'>Stuffs for home and heed</h6>

@@ -48,10 +48,10 @@ const Navbar = () => {
         {
           User.uid ?
             (
-              <button onClick={logout} className='hidden md:flex bg-white w-fit px-6 py-2 rounded-lg hover:cursor-pointer'>Logout dude</button>
+              <button onClick={logout} className='hidden md:flex bg-white w-fit px-6 py-2 rounded-lg hover:cursor-pointer'>Logout</button>
             ) :
             (
-              <button onClick={login} className='hidden md:flex bg-white w-fit px-6 py-2 rounded-lg hover:cursor-pointer'>Login bro</button>
+              <button onClick={login} className='hidden md:flex bg-white w-fit px-6 py-2 rounded-lg hover:cursor-pointer'>Login</button>
             )
         }
       </nav>
@@ -69,10 +69,10 @@ const Navbar = () => {
           {
             User.uid ?
               (
-                <button onClick={logout} className=' border-2 border-prime text-prime w-fit px-6 py-2 rounded-lg hover:cursor-pointer hover:bg-prime hover:text-white  transition duration-200 ease-in-out'>Logout dude</button>
+                <button onClick={logout} className=' border-2 border-prime text-prime w-fit px-6 py-2 rounded-lg hover:cursor-pointer hover:bg-prime hover:text-white  transition duration-200 ease-in-out'>Logout</button>
               ) :
               (
-                <button onClick={login} className=' bg-prime text-white w-fit px-6 py-2 rounded-lg hover:cursor-pointer'>Login bro</button>
+                <button onClick={login} className=' bg-prime text-white w-fit px-6 py-2 rounded-lg hover:cursor-pointer'>Login</button>
               )
           }
         </div>

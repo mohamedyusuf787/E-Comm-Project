@@ -9,7 +9,7 @@ const cartSchema = mongoose.Schema({
         {
             productId: {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: "Product",
+                ref: "Product",  // this can create connection between Cart and Product collections
                 required: true
             },
             quantity: {

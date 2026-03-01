@@ -41,7 +41,6 @@ const Product = () => {
                     quantity: 1
                 }
             )
-
             console.log(res.data)
             console.log("ADD userId:", uid)
 
@@ -60,10 +59,10 @@ const Product = () => {
             <div className="hero-section relative h-full">
                 <img className='w-full md:hidden' src={heroimage} alt="heroimage" />
                 <img className='hidden md:flex' src={DheroImage} alt="desktopimage" />
-                <div className="hero-content absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] text-white text-center md:text-left md:left-70 md:-translate-y-1/3 md:w-[40%] lg:left-100 lg:w-[30%]">
+                <div className="hero-content absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] text-white text-center md:text-left md:left-70 md:-translate-y-1/3 md:w-[40%] lg:left-100 lg:w-[30%]">
                     <h1 className='font-bold text-3xl  lg:text-5xl'> Shop Smarter. Live Better.</h1>
                     <p className='text-gray-300 lg:text-xl'> Discover premium products at unbeatable prices — delivered fast to your doorstep.</p>
-                    <button className='btn'>Shop Now</button>
+                    <button className='btn text-nowrap'>Shop Now</button>
                 </div>
             </div>
 
@@ -122,14 +121,15 @@ const Product = () => {
                 <div className="categories-cards w-full flex-wrap flex gap-3 justify-center">
                     {
                         filteredProducts.map((product, index) => (
-                            <div key={index} className="categories-card flex flex-col gap-2 items-center justify-center mb-2  ">
+                            <div key={index} className="categories-card flex flex-col gap-2 items-center justify-center bg-white p-3 mb-2 min-w-2 rounded-xl drop-shadow-md ">
                                 <div className="flex justify-center card-img w-50 h-50 overflow-hidden rounded-xl md:w-70 md:h-70">
-                                    <img className="hover:scale-105  transition duration-200 ease-in-out" src={`http://localhost:3000${product.images[0]}`} alt={product.name} />    {/*you do not put "/" after 3000.*/}
+                                    <img className=" hover:scale-105  transition duration-200 ease-in-out" src={`https://e-comm-project-jt4w.onrender.com${product.images[0]}`} alt={product.name} />    {/*you do not put "/" after 3000.*/}
                                 </div >
                                 
-                                <div className="card-deti flex flex-col justify-start">
+                                <div className="card-content flex flex-col justify-center">
                                     <h2 className="text-2xl">{product.name}</h2>
-                                    <p className="-mt-2 text-gray-600">{product.description}</p>
+                                    <p className="-mt-2 text-gray-600 text-wrap w-45">{product.description}</p>
+                                    <p className="arial text-md">rating: {product.rating}</p>
                                     <h3 className="font-bold text-2xl">${product.price}.00</h3>
                                 </div>
                                 <div className="card-btn flex flex-col gap-2 w-full">

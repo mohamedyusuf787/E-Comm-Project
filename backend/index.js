@@ -114,45 +114,6 @@ app.post("/api/usercart", async (req, res) => {
     }
 })
 
-// app.put("/api/usercart", async (req, res) => {
-//     try {
-//         const { userId, productId, action } = req.body
-
-//         const cart = await cartModel.findOne({ userId })
-
-//         if (!cart) {
-//             return res.status(404).json({ message: "Cart not found" })
-//         }
-
-//         const productIndex = cart.products.findIndex(
-//             (item) => item.productId === productId
-//         )
-
-//         if (productIndex === -1) {
-//             return res.status(404).json({ message: "Product not found in cart" })
-//         }
-
-//         if (action === "inc") {
-//             cart.products[productIndex].quantity += 1
-//         }
-
-//         if (action === "dec") {
-//             cart.products[productIndex].quantity -= 1
-
-//             // If quantity becomes 0 → remove item
-//             if (cart.products[productIndex].quantity <= 0) {
-//                 cart.products.splice(productIndex, 1)
-//             }
-//         }
-
-//         await cart.save()
-
-//         res.status(200).json({ message: "Quantity updated", cart })
-
-//     } catch (error) {
-//         res.status(500).json({ error: error.message })
-//     }
-// })
 
 app.put("/api/usercart", async (req, res) => {
   try {
@@ -211,7 +172,7 @@ app.get("/api/usercart/:userId", async (req, res) => {
         res.status(200).json(cart)
         console.log("CART FROM DB:", cart)
     } catch (error) {
-   console.log("GET ERROR:", error)   // 👈 MUST LOG
+   console.log("GET ERROR:", error)   //  MUST LOG
         res.status(500).json({ message: "Server error" })
     }
 })

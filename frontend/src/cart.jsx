@@ -47,9 +47,9 @@ const Cart = () => {
     )
 
     return (
-        <section className="cart-section mb-10">
+        <section className="cart-section mb-10 flex-col flex justify-between items-center">
             <h1 className="w-full text-center text-2xl font-bold bg-white py-3">Your cart page</h1>
-            <div className="cart-cards flex flex-col gap-2 bg-white rounded-2xl p-2 mt-10 mx-10 h-fit">
+            <div className="cart-cards flex flex-col gap-2 bg-white rounded-2xl p-2 mt-10 mx-10 h-fit md:w-[50%]">
 
                 {
                     cart.length == 0 ? (
@@ -66,7 +66,7 @@ const Cart = () => {
 
 
                         cart.map((item) => (<div key={item.productId._id}>
-                            <div className="cart-card flex justify-between border-b-2 border-black px-10 py-2">
+                            <div className="cart-card flex justify-between border-b-2 border-black px-10 py-2 ">
                                 <div className="card-left flex gap-3">
 
                                     <img className="w-20 rounded-lg" src={`http://localhost:3000${item.productId.images[0]}`} alt={item.productId.name} />
@@ -80,7 +80,7 @@ const Cart = () => {
                                 </div>
                                 <div className="card-right flex items-end">
 
-                                    <div className="qty-btn arial flex justify-center items-center gap-2 w-fit h-fit py-2 px-4 bg-gray-400 rounded-full">
+                                    <div className="qty-btn arial flex justify-center items-center gap-2 w-fit h-fit py-2 px-4 bg-gray-100 drop-shadow-black-2xl rounded-full">
                                         <button className="font-bold text-xl hover:cursor-pointer" onClick={() => updateQty(item.productId._id, "dec")}>-</button>
                                         <p className="font-bold text-xl">{item.quantity}</p>
                                         <button className="font-bold text-xl hover:cursor-pointer" onClick={() => updateQty(item.productId._id, "inc")}>+</button>
@@ -93,7 +93,7 @@ const Cart = () => {
                         ))}
             </div>
 
-            <div className="bg-white rounded-xl p-4 mt-6 mx-10 shadow-md">
+            <div className="bg-white rounded-xl p-4 mt-6 mx-10 shadow-md w-[90%]">
                 <h2 className="text-xl font-bold mb-3">Cart Summary</h2>
 
                 <div className="flex justify-between mb-2">

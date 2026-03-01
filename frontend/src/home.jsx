@@ -44,22 +44,22 @@ const home = () => {
       <div className="hero-section relative h-full">
         <img className='w-full md:hidden' src={heroimage} alt="heroimage" />
         <img className='hidden md:flex' src={dHeroimage} alt="desktopimage" />
-        <div className="hero-content absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] text-white text-center md:text-left md:left-70 md:-translate-y-1/3 md:w-[40%] lg:left-100 lg:w-[30%]">
+        <div className="hero-content flex flex-col items-center absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] text-white text-center md:text-left md:left-70 md:-translate-y-1/3 md:w-[40%] lg:left-100 lg:w-[30%]">
           <h1 className='font-bold text-3xl  lg:text-5xl'> Shop Smarter. Live Better.</h1>
           <p className='text-gray-300 lg:text-xl'> Discover premium products at unbeatable prices — delivered fast to your doorstep.</p>
-          <button onClick={handleShopnow} className='bg-white font-bold text-prime px-20 py-2 rounded-lg hover:cursor-pointer'>Shop Now</button>
+          <button onClick={handleShopnow} className='bg-white font-bold text-prime  px-20 py-2 text-nowrap rounded-lg hover:cursor-pointer'>Shop Now</button>
         </div>
       </div>
 
       {/* featured categories */}
         <h1 className='text-black font-bold text-2xl text-center mt-10 md:text-4xl'>Featured Categories</h1>
 
-      <section className='featured categries mt-8 flex flex-col justify-center gap-4 md:text-center md:flex-row'>
+      <section className='featured categries mt-8 flex flex-col justify-center items-center gap-4 md:text-center md:flex-row'>
         {
           products.filter((product) => product.isFeatured === true)
             .map((product) => (
-              <div onClick={() => featuredProduct(product._id)} className="categories-card flex flex-col gap-2 items-center justify-center hover:cursor-pointer">
-                <img className='hover:scale-105  transition duration-200 ease-in-out' src={`https://e-comm-project-jt4w.onrender.com${product.images[0]}`} alt={product.name} />
+              <div onClick={() => featuredProduct(product._id)} className="categories-card flex flex-col gap-2 items-center justify-center bg-white w-fit py-2 px-2 rounded-xl hover:cursor-pointer drop-shadow-lg">
+                <img className=' hover:scale-105  transition duration-200 ease-in-out' src={`https://e-comm-project-jt4w.onrender.com${product.images[0]}`} alt={product.name} />
                 <h1 key={product._id} className='text-xl font-bold'>{product.name}</h1>
               </div>
             ))
